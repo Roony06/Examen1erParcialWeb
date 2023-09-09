@@ -1,0 +1,244 @@
+/* New Font Family */
+
+/* Fuente Lato - Negrita */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Fuente Lato - Negrita Cursiva */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Fuente Lato - Cursiva */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Fuente Lato - Ligera */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-Light.ttf') format('truetype');
+    font-weight: 300;
+    /* Puedes usar 300 para ligera */
+    font-style: normal;
+}
+
+/* Fuente Lato - Ligera Cursiva */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    /* Puedes usar 300 para ligera */
+    font-style: italic;
+}
+
+/* Fuente Lato - Regular */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fuente Lato - Delgada */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-Thin.ttf') format('truetype');
+    font-weight: 100;
+    /* Puedes usar 100 para delgada */
+    font-style: normal;
+}
+
+/* Fuente Lato - Delgada Cursiva */
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    /* Puedes usar 100 para delgada */
+    font-style: italic;
+}
+
+/* Normal Font */
+header , footer {
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+/* Header */
+
+#headerUniversidad {
+
+    display: block;
+    background-color: #1867b7;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+#tituloGeneral.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.headerTituloLogo {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.headerTituloLogo h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 500;
+    float: left;
+}
+
+.Menu {
+
+    justify-content: space-between;
+    margin-right: 60px;
+}
+
+.row ul {
+    display: flex;
+
+    font-size: 0.7em;
+    list-style: none;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.row ul li::before {
+    content: " | ";
+    margin: 0px 5px 0px 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.menu-row2 {
+    text-align: right;
+    margin: 0px 20px 0px;
+}
+
+li a {
+
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* footer */
+
+footer{
+    bottom: 0;
+}
+
+.UPM_Domains {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1867b7;
+    padding: 10px;
+    height: 50px;
+}
+
+.UPM_Sites{
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+    height: auto;
+}
+
+.socialMedia {
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.socialMedia a{
+display: flex;
+justify-content: center;
+align-items: center;
+color: #1867b7;
+background-color: white;
+padding: 0.3em;
+border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.6em;
+}
+
+
+.contact {
+    background-color: #474747;
+    padding: 0.5em;
+    list-style: none;
+    font-size: 0.5em;
+    height: fit-content;
+}
+
+.ContactsSponsors{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactList{
+    display: flex;
+    
+}
+
+.contactList ul {
+    list-style:none;
+    margin-inline: 50px;
+}
+
+.sponsorsImages{
+    text-align: right;
+    margin-right: 5em;
+}
+
+.sponsorsImages a img{
+    margin-top: 1em;
+}
+
+#copyr {
+    font-size: 2em;
+    text-align: center;
+    align-self: flex-end;
+}
+
+

@@ -11,27 +11,3 @@ header{
     background-color: #1867b7;
     padding: 1em 0 1em 0;
 }
-
-.UPM_Domains{
-    display: flex;
-    justify-content: space-between;
-    background-color: #1867b7;
-    padding: 30px;
-}
-
-.socialMedia{
-    text-align: left;
-}
-a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.6em;
-}
-
-
-.contact{
-    background-color: #474747;
-    padding: 0.5em;
-    list-style: none;
-
-}
