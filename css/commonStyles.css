@@ -68,7 +68,8 @@
     font-style: italic;
 }
 
-/* Normal Font */
+body{margin: 0;}
+
 header , footer {
     font-family: 'Lato', sans-serif;
     color: white;
