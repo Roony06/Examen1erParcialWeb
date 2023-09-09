@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro UPM</title>
+    <script src="https://kit.fontawesome.com/d4b8af33ac.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/registroStyle.css">
+</head>
+
+<body>
+
+    <header id="headerUniversidad">
+        <a href="index.html"><img src="images/institucional.png" alt="Universidad Politecnica de Madrid"></a>
+        <h1>Universidad<br>Politecnica de Madrid</h1>
+    </header>
+
+    <main>
+
+        <div>
+            Registro de solicitud a la academia
+        </div>
+
+        <div>
+            <form id="formulario-solicitud" action="procesar_solicitud.php" method="post">
+                <!-- Información Personal -->
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+
+                <label for="genero">Género:</label>
+                <input type="radio" id="masculino" name="genero" value="Masculino">Masculino
+                <input type="radio" id="femenino" name="genero" value="Femenino">Femenino
+                <input type="radio" id="otro" name="genero" value="Otro">Otro<br>
+
+                <!-- Información de Contacto -->
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required><br>
+
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" id="telefono" name="telefono"><br>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion"><br>
+
+                <!-- Documentos Adjuntos -->
+                <label for="documentos">Cargar documentos (transcripciones, carta de presentación, etc.):</label>
+                <input type="file" id="documentos" name="documentos"><br>
+
+                <!-- Declaraciones y Consentimientos -->
+                <input type="checkbox" id="consentimiento" name="consentimiento" required>
+                <label for="consentimiento">Acepto los términos y condiciones de la solicitud.</label><br>
+
+                <!-- Botón de Enviar -->
+                <input type="submit" value="Enviar Solicitud">
+            </form>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="UPM_Domains">
+            <div id="UPM">
+                <a href="https://www.upm.es/politecnica_virtual/"><img src="images/icon_pv.png"
+                        alt="Politecnica Virtual"></a>
+                <a href="https://drive.upm.es/index.php/login"><img src="images/icon_UPMdrive.png" alt="UPMDrive"></a>
+            </div>
+            <div class="socialMedia">
+                <a href="https://www.facebook.com/universidadpolitecnicademadrid">
+                    <span class="fa fa-facebook"></span>
+                </a>
+                <a href="https://twitter.com/#!/La_UPM/">
+                    <span class="fa-brands fa-x-twitter"></span>
+                </a>
+                <a href="http://www.youtube.com/user/UPM">
+                    <span class="fa fa-youtube-play"></span>
+                </a>
+
+                <a href="https://www.instagram.com/somosupm/">
+                    <span class="fa fa-instagram"></span>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="contact">
+            <div>
+                <ul>
+                    <li>
+                        <a href="https://www.upm.es/contacto"> Contacto / Directorio </a>
+                    </li>
+                    <li>
+                        <a href="https://transparencia.upm.es/"> Portal de Transparencia </a>
+                    </li>
+                    <li>
+                        <a href="https://sede.upm.es/licitaciones"> Perfil de Contratante </a>
+                    </li>
+                    <li>
+                        <a href="https://www.upm.es/Portal_inv"> Portal del Investigador </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="https://www.upm.es/UPM/Calidad/BQSF"> Quejas/Sugerencias/Felicitaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/UPM/WebUPM/Accesibilidad"> Accesibilidad </a>
+                    </li>
+                    <li>
+                        <a href="https://www.upm.es/AvisoLegal"> Aviso Legal </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="http://www.crue.org/">
+                    <img src="/themes/comun/img/crue20.png" alt="Crue Universidades Españolas" title="Crue">
+                </a>
+                <a href="http://www.universia.es">
+                    <img src="/themes/comun/img/universia15.png" alt="Universia" title="Universia">
+                </a>
+                <a href="https://www.upm.es/UPM/PRTR">
+                    <img src="/themes/comun/img/prtr-02.png" alt="prtr" title="prtr">
+                </a>
+                <a href="">
+                    <img src="/themes/comun/img/hrs4r.png" alt="" title="hsr4r">
+                </a>
+            </div>
+            <div>
+                <p>Universidad Politécnica de Madrid &copy; 2023</p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
