@@ -1,0 +1,74 @@
+#headerUniversidad{
+
+    display: block;
+    background-color: #1867b7;
+}
+.container{
+    width: 100%;
+    overflow: hidden;
+}
+#tituloGeneral.row{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.headerTituloLogo{
+    display: flex;
+}
+.headerTituloLogo h1{
+
+}
+.Menu{
+    
+    justify-content: space-between;
+    margin-right: 60px;
+}
+.row ul{
+    list-style: none;
+    padding: 0;
+}
+.row ul li{
+
+    display: inline;
+    margin-right: 10px;
+}
+.menu-row2{
+    text-align: right;
+    margin: 0px 20px 0px;
+}
+li a{
+
+    text-decoration: none;
+}
+li a:hover{
+    text-decoration: underline;
+
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+
+.menuPrincipal .container{
+
+    display: flex;
+    color: black;
+}
+.menuPrincipal .container ul{
+    list-style: none;
+}
+.menuPrincipal .container ul li{
+    display: inline;
+}
+.menuPrincipal .container ul li a{
+    padding: 5px;
+    color: black;
+}
+.menuPrincipal .container ul li a:hover{
+    text-decoration: none;
+    color: #1867b7;
+}
+body{
+    margin: auto;
+    color: white;
+}
