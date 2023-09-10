@@ -160,7 +160,7 @@ a {
 /* nav */
 
 .menuPrincipal .container{
-
+    font-size: 1em;
     display: flex;
     color: black;
 }
