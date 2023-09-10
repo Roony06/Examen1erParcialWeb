@@ -90,6 +90,7 @@ body {
     justify-content: space-around;
     width: 33.3333333333%;
     flex-wrap: nowrap;
+    
 
 }
 
@@ -129,3 +130,71 @@ body {
     padding-top: 0px;
     padding-left: 16px;
 }
+#tips .container {
+    width: 100%;
+    max-width: 89.2%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#tips .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px; /* Espacio entre columnas */
+    background-color: #e5e5e5;
+}
+.col-tips a {
+    color: #474747;
+    white-space: nowrap; /* Evita el salto de línea */
+    line-height: 1 !important;
+    margin-top: 0; /* Elimina el margen superior predeterminado */
+    font-size: 16.8px; /* Tamaño de fuente */
+}
+.enlace a{
+    font-size: 16.8px;
+}
+.enlace a:hover{
+
+    text-decoration: underline;
+}
+.col-tips {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: 100px;
+    padding-left: 5px;
+}
+
+.col-tips .enlace {
+    flex: 1;
+}
+
+.col-tips .img {
+    margin-left: 20px; 
+    flex: 1;
+}
+
+#tips .img img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.col-tips a {
+    color: #474747;
+}
+.linea-separadora {
+    width: 1px; 
+    height: 95%; 
+    background-color: #B0ADAD; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+
+
+
+
+
+
