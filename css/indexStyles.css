@@ -35,10 +35,12 @@ body {
 }
 
 .carousel-item img{
-    width: 75%;
+    max-width: 75%;
 }.carousel-item p{
     font-size: 2em;
     width: 25%;
+    max-width: 50%;
+    font-weight: 300;
 }
 /* Estilo para los indicadores de navegación */
 .carousel-indicators-container {
