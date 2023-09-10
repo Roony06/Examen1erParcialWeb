@@ -11,14 +11,20 @@ body{
     margin-left: 70px;
 }
 
+/* parte del carrusel */
+
 .carousel-container {
-    display: flex;
-    transition: transform 0.5s ease; /* Transición suave de transformación (traslación) */
+    position: relative;
     width: 260px; /* Ancho ajustable según tu preferencia */
     height: 300px; /* Altura ajustable según tu preferencia */
     margin: 0 auto; /* Centrar el carrusel horizontalmente */
     overflow: hidden;
+}
 
+/* Estilo para los rectángulos */
+.carousel-item-container {
+    display: flex;
+    transition: transform 0.5s ease; /* Transición suave de transformación (traslación) */
 }
 
 .carousel-item {
@@ -31,6 +37,7 @@ body{
     align-items: center;
 }
 
+/* Estilo para los indicadores de navegación */
 .carousel-indicators-container {
     position: absolute;
     bottom: 10px;
