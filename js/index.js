@@ -1,12 +1,16 @@
-let currentSlide = 0;
+
+
+let currentSlide = 0; // Cambiado a 0 para mostrar la primera diapositiva
 const itemContainer = document.querySelector('.carousel-item-container');
 const items = document.querySelectorAll('.carousel-item');
 const indicators = document.querySelectorAll('.carousel-indicator');
 
 function showSlide(index) {
-    const offset = -index * 260; // Ancho de cada elemento
-    itemContainer.style.transform = `translateX(${offset}px)`;
     currentSlide = index;
+    
+    // Calcular el desplazamiento basado en el índice de la diapositiva
+    const offset = -currentSlide * 100;
+    itemContainer.style.transform = `translateX(${offset}%)`;
 
     // Actualiza los indicadores de navegación
     indicators.forEach((indicator, idx) => {

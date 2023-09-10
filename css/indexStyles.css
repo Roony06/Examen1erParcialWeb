@@ -1,22 +1,20 @@
-body{
+body {
+    font-family: 'Lato', sans-serif;
     margin: auto;
     color: white;
 }
-#novedades .container .row{ 
 
+#novedades .container .row {
     display: flex;
 }
-#carrusel.col-crs-2{
 
-    margin-left: 70px;
-}
+/* CARRUSEL RONY  */
 
-/* parte del carrusel */
 
 .carousel-container {
     position: relative;
-    width: 260px; /* Ancho ajustable según tu preferencia */
-    height: 300px; /* Altura ajustable según tu preferencia */
+    width: 50%;
+    height: auto; 
     margin: 0 auto; /* Centrar el carrusel horizontalmente */
     overflow: hidden;
 }
@@ -28,35 +26,38 @@ body{
 }
 
 .carousel-item {
-    flex: 0 0 100%;
-    width: 300px; /* Ancho igual al del contenedor */
-    height: 300px; /* Altura igual al del contenedor */
-    background-color: rgb(59, 125, 238);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 0 0 100%;
+    width: 50%; /* Ancho igual al del contenedor */
+    background-color: rgb(59, 125, 238);
 }
 
+.carousel-item img{
+    width: 75%;
+}.carousel-item p{
+    font-size: 2em;
+    width: 25%;
+}
 /* Estilo para los indicadores de navegación */
 .carousel-indicators-container {
     position: absolute;
-    bottom: 10px;
-    left: 30%; /* Centra los indicadores horizontalmente */
-    transform: translateX(-50%); /* Centra los indicadores horizontalmente */
+    bottom: 5%;
+    right: 10%; /* Centra los indicadores horizontalmente */
     display: flex;
     align-items: center;
     z-index: 2; /* Asegura que estén sobre el contenido */
 }
 
 .carousel-indicator {
-    display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: transparent; /* Fondo transparente para los indicadores */
-    border: 1px solid #fff; /* Perímetro blanco para todos los indicadores */
+    background-color: transparent; 
+    border: 1px solid #fff; 
     border-radius: 50%;
     cursor: pointer;
-    margin: 0 4px 5px 0px; /* Espacio de 10px a la izquierda de los indicadores */
+    margin: 0 4px 4px 0px; 
 }
 
 /* Estilo para el indicador activo */
@@ -67,8 +68,8 @@ body{
 /* Estilo para las flechas de navegación */
 .carousel-control-container {
     position: absolute;
-    bottom: 4px;
-    right: 0px; /* Alinea las flechas a la derecha y da un poco de espacio */
+    bottom: 3%;
+    right: 0; 
     display: flex;
     align-items: center;
 }
@@ -77,10 +78,12 @@ body{
     font-size: 30px;
     cursor: pointer;
     margin: 0 10px;
-    color: #fff; /* Cambia el color a blanco para las flechas */
+    color: #fff; /* Cambia el color a blanco para las flechas */
 }
+/* FIN CARRUSEL RONY */
 
-#noticias{
+
+#noticias {
 
     display: flex;
     flex-direction: column;
@@ -89,25 +92,30 @@ body{
     flex-wrap: nowrap;
 
 }
-#noticias .col-el1,.col-el2,.col-el3{
+
+#noticias .col-el1,
+.col-el2,
+.col-el3 {
 
     padding: 10px 0px 10px 10px;
     background-color: #dbe0f0;
 
 }
-#noticias a span{
+
+#noticias a span {
     float: left;
     margin-top: 1.125em;
     margin-right: .5em;
     font-size: .9em;
 }
 
-#noticias h2::before{
+#noticias h2::before {
     content: "\2771 \0020";
     color: #00458f;
     padding: 5px;
 }
-#noticias h2{
+
+#noticias h2 {
 
     font-size: medium;
     color: #00458f;
@@ -115,11 +123,9 @@ body{
     margin-bottom: 0px;
 }
 
-#noticias p{
+#noticias p {
     color: black;
     margin-top: 5px;
     padding-top: 0px;
     padding-left: 16px;
 }
-
-
