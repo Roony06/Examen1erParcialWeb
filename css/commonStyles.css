@@ -265,3 +265,71 @@ a {
 }   
 
 
+/* parte del carrusel */
+
+.carousel-container {
+    position: relative;
+    width: 260px; /* Ancho ajustable según tu preferencia */
+    height: 300px; /* Altura ajustable según tu preferencia */
+    margin: 0 auto; /* Centrar el carrusel horizontalmente */
+    overflow: hidden;
+}
+
+/* Estilo para los rectángulos */
+.carousel-item-container {
+    display: flex;
+    transition: transform 0.5s ease; /* Transición suave de transformación (traslación) */
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    width: 300px; /* Ancho igual al del contenedor */
+    height: 300px; /* Altura igual al del contenedor */
+    background-color: rgb(59, 125, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para los indicadores de navegación */
+.carousel-indicators-container {
+    position: absolute;
+    bottom: 10px;
+    left: 30%; /* Centra los indicadores horizontalmente */
+    transform: translateX(-50%); /* Centra los indicadores horizontalmente */
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Asegura que estén sobre el contenido */
+}
+
+.carousel-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: transparent; /* Fondo transparente para los indicadores */
+    border: 1px solid #fff; /* Perímetro blanco para todos los indicadores */
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 4px 5px 0px; /* Espacio de 10px a la izquierda de los indicadores */
+}
+
+/* Estilo para el indicador activo */
+.carousel-indicator.active {
+    background-color: #fff; /* Cambia el fondo a blanco para el indicador activo */
+}
+
+/* Estilo para las flechas de navegación */
+.carousel-control-container {
+    position: absolute;
+    bottom: 4px;
+    right: 0px; /* Alinea las flechas a la derecha y da un poco de espacio */
+    display: flex;
+    align-items: center;
+}
+
+.carousel-control {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: #fff; /* Cambia el color a blanco para las flechas */
+}
