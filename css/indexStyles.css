@@ -9,12 +9,9 @@ body {
 }
 
 /* CARRUSEL RONY  */
-
-
 .carousel-container {
     position: relative;
     width: 50%;
-    height: auto; 
     margin: 0 auto; /* Centrar el carrusel horizontalmente */
     overflow: hidden;
 }
@@ -36,6 +33,7 @@ body {
 
 .carousel-item img{
     max-width: 75%;
+    height: 100%;
 }.carousel-item p{
     font-size: 2em;
     width: 25%;
