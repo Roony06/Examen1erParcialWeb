@@ -56,38 +56,26 @@
     </header>
 
     <main>
-        <h1>Buscar Programas Académicos</h1>
+        <h1>Selecciona un Campus y una Carrera</h1>
 
-        <label for="programa">Buscar Programa Académico:</label>
-        <input type="text" id="programa" name="programa" list="opciones-programas">
-        <datalist id="opciones-programas">
-            <option value="Ingeniería Informática">
-            <option value="Matemáticas">
-            <option value="Arquitectura">
-        </datalist>
-
-        <label for="facultad">Seleccionar Facultad o Escuela:</label>
-        <select id="facultad" name="facultad">
-            <option value="todos">Todas las Facultades y Escuelas</option>
-            <option value="ingenieria">Facultad de Ingeniería</option>
-            <option value="ciencias">Facultad de Ciencias</option>
-            <option value="arquitectura">Escuela de Arquitectura</option>
+        <label for="campus">Selecciona un Campus:</label>
+        <select id="campus" name="campus">
+            <option value="Campus Ciudad Universitaria">Campus Ciudad Universitaria</option>
+            <option value="Campus Madrid Ciudad">Campus Madrid Ciudad</option>
+            <option value="Campus Montegancedo">Campus Montegancedo</option>
+            <option value="Campus Sur">Campus Sur</option>
         </select>
 
-        <div id="resultados">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Facultad</th>
-                        <th>Carrera</th>
-                        <th>Rama</th>
-                    </tr>
-                </thead>
-                <tbody id="miTabla">
-                </tbody>
-            </table>
+        <label for="carrera">Selecciona una Carrera:</label>
+        <input type="text" id="carrera" name="carrera" list="carreras">
+        <datalist id="carreras">
+            <!-- Aquí se llenarán dinámicamente las opciones -->
+        </datalist>
 
-        </div>
+        <h2>Información de Carrera:</h2>
+        <table id="tabla-info">
+            <!-- Aquí se mostrará la información de la carrera seleccionada -->
+        </table>
     </main>
 
 

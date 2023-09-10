@@ -1,118 +1,251 @@
-// Obtén los elementos del formulario
-const programaInput = document.getElementById('programa');
-const facultadSelect = document.getElementById('facultad');
-const resultadosDiv = document.getElementById('resultados');
-const data = [
-    {
-        facultad: 'Ingeniería',
-        carreras: [
-            { nombre: 'Ingeniería Informática', rama: 'Tecnología' },
-            { nombre: 'Ingeniería Mecánica', rama: 'Ingeniería' },
-            // Agrega más carreras según sea necesario
-        ],
+const campusSelect = document.getElementById('campus');
+const carreraInput = document.getElementById('carrera');
+const carrerasDatalist = document.getElementById('carreras');
+const tablaInfo = document.getElementById('tabla-info');
+
+// Definir carreras por campus (datos proporcionados)
+const carrerasPorCampus = {
+    'Campus Ciudad Universitaria': [
+        'E.T.S. de Arquitectura',
+        'E.T.S. de Edificación',
+        'E.T.S. de Ingeniería Aeronáutica y del Espacio',
+        'E.T.S. de Ingeniería Agronómica, Alimentaría y de Biosistemas',
+        'E.T.S. de Ingeniería de Montes, Forestal y del Medio Natural',
+        'E.T.S. de Ingenieros de Caminos, Canales y Puertos',
+        'E.T.S de Ingenieros de Telecomunicación',
+        'E.T.S. de Ingenieros Navales',
+        'Facultad de Ciencias de la Actividad Física y del Deporte (INFEF)',
+        'Rectorado',
+        'Instituto de Energía Solar',
+        'Instituto de Sistemas Optoelectrónicos y Microtecnología',
+        'Instituto de Ciencias de la Educación (ICE)'
+    ],
+    'Campus Madrid Ciudad': [
+        'E.T.S. de Ingeniería Civil',
+        'E.T.S. de Ingeniería y Diseño Industrial',
+        'E.T.S. de Ingenieros de Minas y Energía',
+        'E.T.S. de Ingenieros Industriales',
+        'Instituto de Fusión Nuclear'
+    ],
+    'Campus Montegancedo': [
+        'E.T.S. de Ingenieros Informáticos',
+        'Centro de Investigación en Biotecnología y Genómica de Plantas (CBGP)',
+        'Centro de Tecnología Biomédica (CTB)',
+        'Instituto Universitario de Microgravedad "Ignacio Da Riva"',
+        'Centro de Domótica Integral (CeDINT-UMP)'
+    ],
+    'Campus Sur': [
+        'E.T.S. de Ingeniería de Sistemas Informáticos',
+        'E.T.S. de Ingeniería de Sistemas Telecomunicación',
+        'E.T.S. de Ingenieros en Topografía, Geodesia y Cartografía',
+        'Instituto de Investigación del Automóvil (INSIA)',
+        'Centro Superior de Diseño de Moda de Madrid (centro adscrito a la UPM)',
+        'Centro de Investigación en Tecnologías de Software y Sistemas Multimedia para la Sostenibilidad'
+    ]
+};
+
+// Definir información para cada carrera (datos proporcionados)
+const informacionCarreras = {
+    'E.T.S. de Arquitectura': {
+        nombre: 'E.T.S. de Arquitectura',
+        duracion: '5 años',
+        descripcion: 'Escuela de Arquitectura especializada en diseño y planificación de edificios.'
     },
-    {
-        facultad: 'Ciencias',
-        carreras: [
-            { nombre: 'Biología', rama: 'Ciencias Naturales' },
-            { nombre: 'Química', rama: 'Ciencias Naturales' },
-            // Agrega más carreras según sea necesario
-        ],
+    'E.T.S. de Edificación': {
+        nombre: 'E.T.S. de Edificación',
+        duracion: '4 años',
+        descripcion: 'Escuela de Edificación centrada en técnicas de construcción y gestión de proyectos.'
     },
-    // Agrega más facultades según sea necesario
-];
+    'E.T.S. de Ingeniería Aeronáutica y del Espacio': {
+        nombre: 'E.T.S. de Ingeniería Aeronáutica y del Espacio',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingeniería Aeronáutica enfocada en tecnología aeroespacial.'
+    },
+    'E.T.S. de Ingeniería Agronómica, Alimentaría y de Biosistemas': {
+        nombre: 'E.T.S. de Ingeniería Agronómica, Alimentaría y de Biosistemas',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingeniería Agronómica que se especializa en alimentos y biosistemas.'
+    },
+    'E.T.S. de Ingeniería de Montes, Forestal y del Medio Natural': {
+        nombre: 'E.T.S. de Ingeniería de Montes, Forestal y del Medio Natural',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingeniería enfocada en la gestión de recursos forestales y medio ambiente.'
+    },
+    'E.T.S. de Ingenieros de Caminos, Canales y Puertos': {
+        nombre: 'E.T.S. de Ingenieros de Caminos, Canales y Puertos',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingenieros especializada en infraestructuras civiles.'
+    },
+    'E.T.S de Ingenieros de Telecomunicación': {
+        nombre: 'E.T.S de Ingenieros de Telecomunicación',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingenieros dedicada a la tecnología de telecomunicación.'
+    },
+    'E.T.S. de Ingenieros Navales': {
+        nombre: 'E.T.S. de Ingenieros Navales',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingenieros Navales que se enfoca en la construcción naval y la ingeniería marina.'
+    },
+    'Facultad de Ciencias de la Actividad Física y del Deporte (INFEF)': {
+        nombre: 'Facultad de Ciencias de la Actividad Física y del Deporte (INFEF)',
+        duracion: '4 años',
+        descripcion: 'Facultad dedicada a la formación en ciencias del deporte y la actividad física.'
+    },
+    'Rectorado': {
+        nombre: 'Rectorado',
+        duracion: 'Varía',
+        descripcion: 'Sede del Rectorado de la Universidad Politécnica de Madrid.'
+    },
+    'Instituto de Energía Solar': {
+        nombre: 'Instituto de Energía Solar',
+        duracion: 'Varía',
+        descripcion: 'Instituto de investigación dedicado a la energía solar y las tecnologías renovables.'
+    },
+    'Instituto de Sistemas Optoelectrónicos y Microtecnología': {
+        nombre: 'Instituto de Sistemas Optoelectrónicos y Microtecnología',
+        duracion: 'Varía',
+        descripcion: 'Instituto de investigación enfocado en sistemas optoelectrónicos y microtecnología.'
+    },
+    'Instituto de Ciencias de la Educación (ICE)': {
+        nombre: 'Instituto de Ciencias de la Educación (ICE)',
+        duracion: 'Varía',
+        descripcion: 'Instituto dedicado a la investigación en ciencias de la educación y pedagogía.'
+    },
+    'E.T.S. de Ingeniería Civil': {
+        nombre: 'E.T.S. de Ingeniería Civil',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingeniería Civil enfocada en la planificación y construcción de infraestructuras.'
+    },
+    'E.T.S. de Ingeniería y Diseño Industrial': {
+        nombre: 'E.T.S. de Ingeniería y Diseño Industrial',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingeniería y Diseño Industrial centrada en la innovación y la producción.'
+    },
+    'E.T.S. de Ingenieros de Minas y Energía': {
+        nombre: 'E.T.S. de Ingenieros de Minas y Energía',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingenieros de Minas y Energía dedicada a la explotación de recursos naturales y energía.'
+    },
+    'E.T.S. de Ingenieros Industriales': {
+        nombre: 'E.T.S. de Ingenieros Industriales',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingenieros Industriales especializada en procesos de manufactura y producción.'
+    },
+    'Instituto de Fusión Nuclear': {
+        nombre: 'Instituto de Fusión Nuclear',
+        duracion: 'Varía',
+        descripcion: 'Instituto de investigación en el campo de la fusión nuclear y la energía de fusión.'
+    },
+    'E.T.S. de Ingenieros Informáticos': {
+        nombre: 'E.T.S. de Ingenieros Informáticos',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingenieros Informáticos centrada en tecnologías de la información y la informática.'
+    },
+    'Centro de Inv. en Biotecnología y Genómica de Plantas (CBGP)': {
+        nombre: 'Centro de Inv. en Biotecnología y Genómica de Plantas (CBGP)',
+        duracion: 'Varía',
+        descripcion: 'Centro de investigación en biotecnología y genómica vegetal.'
+    },
+    'Centro de Tecnología Biomédica (CTB)': {
+        nombre: 'Centro de Tecnología Biomédica (CTB)',
+        duracion: 'Varía',
+        descripcion: 'Centro de investigación en tecnología biomédica y salud.'
+    },
+    'Instituto Universitario de Microgravedad "Ignacio Da Riva"': {
+        nombre: 'Instituto Universitario de Microgravedad "Ignacio Da Riva"',
+        duracion: 'Varía',
+        descripcion: 'Instituto dedicado a la investigación en microgravedad y tecnologías espaciales.'
+    },
+    'Centro de Domótica Integral (CeDINT-UMP)': {
+        nombre: 'Centro de Domótica Integral (CeDINT-UMP)',
+        duracion: 'Varía',
+        descripcion: 'Centro de investigación en domótica y automatización del hogar.'
+    },
+    'E.T.S. de Ingeniería de Sistemas Informáticos': {
+        nombre: 'E.T.S. de Ingeniería de Sistemas Informáticos',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingeniería especializada en sistemas informáticos y software.'
+    },
+    'E.T.S. de Ingeniería de Sistemas Telecomunicación': {
+        nombre: 'E.T.S. de Ingeniería de Sistemas Telecomunicación',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingeniería de Telecomunicación centrada en sistemas de comunicación.'
+    },
+    'E.T.S. de Ingenieros en Topografía, Geodesia y Cartografía': {
+        nombre: 'E.T.S. de Ingenieros en Topografía, Geodesia y Cartografía',
+        duracion: '4 años',
+        descripcion: 'Escuela de Ingenieros especializada en topografía, geodesia y cartografía.'
+    },
+    'Instituto de Investigación del Automóvil (INSIA)': {
+        nombre: 'Instituto de Investigación del Automóvil (INSIA)',
+        duracion: 'Varía',
+        descripcion: 'Instituto de investigación en tecnología automotriz y seguridad vial.'
+    },
+    'Centro Superior de Diseño de Moda de Madrid (centro adscrito a la UPM)': {
+        nombre: 'Centro Superior de Diseño de Moda de Madrid (centro adscrito a la UPM)',
+        duracion: 'Varía',
+        descripcion: 'Centro de diseño de moda adscrito a la Universidad Politécnica de Madrid.'
+    },
+    'Centro de Inv. en Tecnologías Sw y Sis. Multimedia para la sostenibilidad.': {
+        nombre: 'Centro de Inv. en Tecnologías Sw y Sis. Multimedia para la sostenibilidad.',
+        duracion: 'Varía',
+        descripcion: 'Centro de investigación en tecnologías de software y sistemas multimedia sostenibles.'
+    },
+};
 
 
-// Escucha eventos de cambio en los elementos
-programaInput.addEventListener('input', actualizarResultados);
-facultadSelect.addEventListener('change', actualizarResultados);
 
-function actualizarResultados() {
-    const programaSeleccionado = programaInput.value;
-    const facultadSeleccionada = facultadSelect.value;
+// Evento que se dispara cuando se selecciona un campus
+campusSelect.addEventListener('change', actualizarCarreras);
 
-    // Realiza aquí tu lógica para filtrar y mostrar resultados
-    // Puedes usar programaSeleccionado y facultadSeleccionada
+// Evento que se dispara cuando se selecciona una carrera
+carreraInput.addEventListener('input', mostrarInformacionCarrera);
 
-    // Ejemplo de actualización de resultados
-    const resultadosHTML = `
-    <h2>Resultados de búsqueda:</h2>
-    <p>Programa Académico: ${programaSeleccionado}</p>
-    <p>Facultad o Escuela: ${facultadSeleccionada}</p>`;
+// Función para actualizar las opciones del datalist
+function actualizarCarreras() {
+    const campusSeleccionado = campusSelect.value;
+    const carreras = carrerasPorCampus[campusSeleccionado] || [];
 
-    // Muestra los resultados en el div de resultados
-    resultadosDiv.innerHTML = resultadosHTML;
+    // Limpiar las opciones anteriores
+    carrerasDatalist.innerHTML = '';
 
-    // Muestra el div de resultados (puedes ajustar esto según tus necesidades)
-    resultadosDiv.style.display = 'block';
-}
-
-// Función para crear y mostrar la tabla
-function mostrarTabla() {
-    const tablaCarreras = document.getElementById('tabla-carreras');
-
-    // Recorre la estructura de datos y crea las filas de la tabla
-    data.forEach(facultad => {
-        facultad.carreras.forEach(carrera => {
-            const fila = document.createElement('tr');
-            fila.innerHTML = `
-        <td>${facultad.facultad}</td>
-        <td>${carrera.nombre}</td>
-        <td>${carrera.rama}</td>`;
-            tablaCarreras.appendChild(fila);
-        });
+    // Llenar el datalist con las nuevas opciones
+    carreras.forEach(carrera => {
+        const opcion = document.createElement('option');
+        opcion.value = carrera;
+        carrerasDatalist.appendChild(opcion);
     });
 }
 
-// Constantes para selección de elementos HTML
-const tabla = document.getElementById('miTabla'); // Reemplaza 'miTabla' con el ID de tu tabla
-const cuerpoTabla = tabla.querySelector('tbody');
-const filas = cuerpoTabla.querySelectorAll('tr');
+// Función para mostrar la información de la carrera
+function mostrarInformacionCarrera() {
+    const nombreCarrera = carreraInput.value;
+    const datosCarrera = informacionCarreras[nombreCarrera];
 
-// Función para agregar una fila a la tabla
-function agregarFila(datos) {
-    const fila = document.createElement('tr');
-    datos.forEach(dato => {
-        const celda = document.createElement('td');
-        celda.textContent = dato;
-        fila.appendChild(celda);
-    });
-    cuerpoTabla.appendChild(fila);
-}
+    // Limpiar la tabla
+    tablaInfo.innerHTML = '';
 
-// Función para eliminar la última fila de la tabla
-function eliminarUltimaFila() {
-    if (filas.length > 0) {
-        cuerpoTabla.removeChild(filas[filas.length - 1]);
-    }
-}
-
-// Función para obtener los datos de una fila específica
-function obtenerDatosFila(indice) {
-    const fila = filas[indice];
-    if (fila) {
-        const celdas = fila.querySelectorAll('td');
-        const datos = Array.from(celdas).map(celda => celda.textContent);
-        return datos;
+    if (datosCarrera) {
+        // Crear filas de la tabla con información de la carrera
+        for (const propiedad in datosCarrera) {
+            if (datosCarrera.hasOwnProperty(propiedad)) {
+                const fila = document.createElement('tr');
+                const celdaPropiedad = document.createElement('td');
+                const celdaValor = document.createElement('td');
+                celdaPropiedad.textContent = propiedad;
+                celdaValor.textContent = datosCarrera[propiedad];
+                fila.appendChild(celdaPropiedad);
+                fila.appendChild(celdaValor);
+                tablaInfo.appendChild(fila);
+            }
+        }
     } else {
-        return null;
+        // Mostrar un mensaje de error si la carrera no se encuentra
+        tablaInfo.innerHTML = '<tr><td colspan="2">Carrera no encontrada</td></tr>';
     }
 }
 
-// Función para limpiar la tabla
-function limpiarTabla() {
-    while (cuerpoTabla.firstChild) {
-        cuerpoTabla.removeChild(cuerpoTabla.firstChild);
-    }
-}
-
-// Ejemplos de uso:
-agregarFila(['Dato1', 'Dato2', 'Dato3']);
-agregarFila(['Dato4', 'Dato5', 'Dato6']);
-console.log(obtenerDatosFila(0)); // Obtener datos de la primera fila
-eliminarUltimaFila(); // Eliminar la última fila
-limpiarTabla(); // Limpiar todos los datos de la tabla
 
 
-// Llama a la función para mostrar la tabla
-mostrarTabla();
+// Inicialmente, cargar las opciones para el primer campus
+actualizarCarreras();
