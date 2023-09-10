@@ -73,6 +73,90 @@
     </div>
   </nav>
 
+  
+  <!-- este es mi parte -->
+  <div class="carousel-container">
+    <div class="carousel-item-container">
+        <div class="carousel-item">
+            <p>hola 1</p>
+        </div>
+        <div class="carousel-item">
+            <p>hola 2</p>
+        </div>
+        <div class="carousel-item">
+            <p>hola 3</p>
+        </div>
+        <div class="carousel-item">
+            <p>hola 4</p>
+        </div>
+        <div class="carousel-item">
+            <p>hola 5</p>
+        </div>
+        <div class="carousel-item">
+            <p>hola 6</p>
+        </div>
+        <div class="carousel-item">
+            <p>hola 7</p>
+        </div>
+        <div class="carousel-item">
+            <p>hola 8</p>
+        </div>
+    </div>
+    <div class="carousel-indicators-container">
+        <div class="carousel-indicator active" onclick="showSlide(0)"></div>
+        <div class="carousel-indicator" onclick="showSlide(1)"></div>
+        <div class="carousel-indicator" onclick="showSlide(2)"></div>
+        <div class="carousel-indicator" onclick="showSlide(3)"></div>
+        <div class="carousel-indicator" onclick="showSlide(4)"></div>
+        <div class="carousel-indicator" onclick="showSlide(5)"></div>
+        <div class="carousel-indicator" onclick="showSlide(6)"></div>
+        <div class="carousel-indicator" onclick="showSlide(7)"></div>
+    </div>
+    <div class="carousel-control-container">
+        <div class="carousel-control carousel-control-left" onclick="prevSlide()">&lt;</div>
+        <div class="carousel-control carousel-control-right" onclick="nextSlide()">&gt;</div>
+    </div>
+</div>
+
+<!-- script que no supe como meter jiji -->
+<script>
+  let currentSlide = 0;
+  const itemContainer = document.querySelector('.carousel-item-container');
+  const items = document.querySelectorAll('.carousel-item');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+
+  function showSlide(index) {
+      const offset = -index * 260; // Ancho de cada elemento
+      itemContainer.style.transform = `translateX(${offset}px)`;
+      currentSlide = index;
+
+      // Actualiza los indicadores de navegación
+      indicators.forEach((indicator, idx) => {
+          if (idx === index) {
+              indicator.classList.add('active');
+          } else {
+              indicator.classList.remove('active');
+          }
+      });
+  }
+
+  function prevSlide() {
+      const prevSlide = (currentSlide - 1 + items.length) % items.length;
+      showSlide(prevSlide);
+  }
+
+  function nextSlide() {
+      const nextSlide = (currentSlide + 1) % items.length;
+      showSlide(nextSlide);
+  }
+
+  // Iniciar el carrusel
+  showSlide(currentSlide);
+
+  // Cambiar de diapositiva automáticamente cada 3 segundos
+  setInterval(nextSlide, 3000);
+</script>
+
   <main id="todo">
     <section id="novedades">
       <div class="container">
