@@ -55,27 +55,48 @@
         </div>
     </header>
 
+    <nav class="menuPrincipal">
+        <div class="container">
+            <ul class="listaMenu">
+                <li><a href="https://www.upm.es/UPM">UPM &nbsp;|</a></li>
+                <li><a href="https://www.upm.es/Estudiantes">Estudiantes &nbsp;|</a></li>
+                <li><a href="facultades.html">Programas y facultades &nbsp;|</a></li>
+                <li><a href="https://www.upm.es/Personal">Personal &nbsp;|</a></li>
+                <li><a href="https://www.upm.es/Investigacion">Investigación &nbsp;|</a></li>
+                <li><a href="registro.html">Registro de solicitud de ingreso</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <h1>Selecciona un Campus y una Carrera</h1>
+        <div class="titulo">
+            <h1>Selecciona un Campus y una Carrera</h1>
+        </div>
+        <div class="formsList">
 
-        <label for="campus">Selecciona un Campus:</label>
-        <select id="campus" name="campus">
-            <option value="Campus Ciudad Universitaria">Campus Ciudad Universitaria</option>
-            <option value="Campus Madrid Ciudad">Campus Madrid Ciudad</option>
-            <option value="Campus Montegancedo">Campus Montegancedo</option>
-            <option value="Campus Sur">Campus Sur</option>
-        </select>
+            <div class="select">
+                <label for="campus">Selecciona un Campus:</label>
+                <select id="campus" name="campus">
+                    <option value="Campus Ciudad Universitaria">Campus Ciudad Universitaria</option>
+                    <option value="Campus Madrid Ciudad">Campus Madrid Ciudad</option>
+                    <option value="Campus Montegancedo">Campus Montegancedo</option>
+                    <option value="Campus Sur">Campus Sur</option>
+                </select>
+            </div>
+    
+            <div class="datalist">
+                <label for="carrera">Selecciona una Carrera:</label>
+                <input type="text" id="carrera" name="carrera" list="carreras">
+                <datalist id="carreras"></datalist>
+            </div>
+        </div>
 
-        <label for="carrera">Selecciona una Carrera:</label>
-        <input type="text" id="carrera" name="carrera" list="carreras">
-        <datalist id="carreras">
-            <!-- Aquí se llenarán dinámicamente las opciones -->
-        </datalist>
-
-        <h2>Información de Carrera:</h2>
-        <table id="tabla-info">
-            <!-- Aquí se mostrará la información de la carrera seleccionada -->
-        </table>
+        <div class="tabla-info">
+            <h2>Información de Carrera:</h2>
+            <table id="tabla-info">
+                <!-- Aquí se mostrará la información de la carrera seleccionada -->
+            </table>
+        </div>
     </main>
 
 
